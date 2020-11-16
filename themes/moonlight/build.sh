@@ -9,7 +9,7 @@ source "./config"
 
 # Export icons as PNG
 echo "🎨 Exporting icons..."
-# osascript ./scripts/export-artboards.scpt
+osascript ./scripts/export-artboards.scpt
 
 # Build theme
 echo "🔨 Building theme (${THEME_NAME})..."
@@ -35,9 +35,15 @@ eval "echo \"$(< $INFO_PLIST_TEMPLATE)\"" > "$THEME_DIR/Info.plist"
 dpkg -b $WORK_DIR
 cp "$WORK_DIR.deb" "./build/${THEME_NAME}_$VERSION.deb"
 
+# Complete
+echo "Saved package to "./build/moonlight_v0.1.0""
+
+# Copy theme to device
+echo "Copying theme to device..."
+scp -rq $THEME_DIR root@10.0.0.5:/Library/Themes/
+
 # Tidy up
 rm -r $BUILD_DIR
 
-# Complete
-echo "Saved package to "./build/moonlight_v0.1.0""
+# TODO: Add test cases? CI Pipeline?
 echo "✨ Done!"

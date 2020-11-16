@@ -2,3 +2,4 @@
 # TODO: Remove visible directory
 **/.tmp/
 **/build/*.deb
+**/*.swp
