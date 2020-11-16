@@ -1,0 +1,6 @@
+THEME_NAME="Moonlight"
+BUNDLE_ID="com.shoyu.moonlight"
+DESCRIPTION="Another glow theme."
+AUTHOR="@ty_ios"
+VERSION="0.1.0"
+ILLUSTRATOR_SOURCE="./src/moonlight.ai"

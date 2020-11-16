@@ -1,0 +1,9 @@
+Package: ${BUNDLE_ID}
+Name: ${THEME_NAME}
+Version: ${VERSION}
+Architecture: iphoneos-arm
+Description: ${DESCRIPTION}
+Author: ${AUTHOR}
+Maintainer: ${AUTHOR}
+Section: Themes
+Depends: com.anemonetheming.anemone | com.spark.snowboard

@@ -1,1 +1,4 @@
 .DS_Store
+# TODO: Remove visible directory
+**/.tmp/
+**/build/*.deb
