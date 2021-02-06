@@ -2,7 +2,7 @@ var docRef = app.activeDocument;
 
 function exportArtboards() {
     for (var i = 0; i < docRef.artboards.length; i++) {
-        var artboardName = docRef.artboards[i].name;
+        var artboardName = docRef.artboards[i].name.split('\n')[0];
 
         // Skip artboards that start with "Artboard" or that start with a dash (-)
         if (!(artboardName.match(/^artboard/) || artboardName.match(/^\-/))) {

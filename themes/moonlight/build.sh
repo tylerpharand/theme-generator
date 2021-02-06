@@ -2,12 +2,13 @@
 
 BUILD_DIR="./tmp"
 CONTROL_TEMPLATE="./templates/control.template"
-INFO_PLIST_TEMPLATE="./templates/Info.plist.template"
+INFO_PLIST="./src/Info.plist"
 
 # Load config
 source "./config"
 
 # Export icons as PNG
+rm -r './src/icons' && mkdir './src/icons'
 echo "🎨 Exporting icons..."
 osascript ./scripts/export-artboards.scpt
 
@@ -26,11 +27,11 @@ mkdir "$WORK_DIR/Library/Themes"
 THEME_DIR="$WORK_DIR/Library/Themes/${THEME_NAME}.theme"
 mkdir $THEME_DIR
 mkdir "$THEME_DIR/IconBundles"
-mkdir "$THEME_DIR/Bundles"
 # TODO: Generate icon masks of varying dimensions (?)
-mkdir "$THEME_DIR/Bundles/com.apple.mobileicons.framework"
+mkdir "$THEME_DIR/Bundles" && mkdir "$THEME_DIR/Bundles/com.apple.mobileicons.framework"
 cp -r "./src/icons/" "$THEME_DIR/IconBundles"
-eval "echo \"$(< $INFO_PLIST_TEMPLATE)\"" > "$THEME_DIR/Info.plist"
+cp -r "./src/Bundles" "$THEME_DIR/"
+eval "echo \"$(< $INFO_PLIST)\"" > "$THEME_DIR/Info.plist"
 
 dpkg -b $WORK_DIR
 cp "$WORK_DIR.deb" "./build/${THEME_NAME}_$VERSION.deb"
@@ -41,6 +42,9 @@ echo "Saved package to "./build/moonlight_v0.1.0""
 # Copy theme to device
 echo "Copying theme to device..."
 scp -rq $THEME_DIR root@10.0.0.5:/Library/Themes/
+
+# Restart springboard
+echo "killall backboardd" | ssh root@10.0.0.5
 
 # Tidy up
 rm -r $BUILD_DIR

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version=\"${VERSION}\">
+  <dict>
+    <key>IB-MaskIcons</key>
+    <true/>
+    <key>PackageName</key>
+    <string>${THEME_NAME}</string>
+    <key>ThemeType</key>
+    <string>Icons</string>
+    <key>CalendarIconDaySettings</key>
+  	<dict>
+  		<key>FontName</key><string>HelveticaNeue-Light</string>
+  		<key>FontSize</key><real>8.0</real>
+  		<key>TextColor</key><string>rgba(255,255,255,0)</string>
+  		<key>TextXoffset</key><real>0.0</real>
+  		<key>TextYoffset</key><real>0.0</real>
+  		<key>ShadowColor</key><string>rgba(0,0,0,0)</string>
+  		<key>ShadowBlurRadius</key><real>0.0</real>
+  		<key>ShadowXoffset</key><real>0.0</real>
+  		<key>ShadowYoffset</key><real>1.0</real>
+  	</dict>
+  	<key>CalendarIconDateSettings</key>
+  	<dict>
+  		<key>FontName</key><string>HelveticaNeue-Light</string>
+  		<key>FontSize</key><real>24.0</real>
+  		<key>TextColor</key><string>rgba(255,255,255,1)</string>
+  		<key>TextXoffset</key><real>0.0</real>
+  		<key>TextYoffset</key><real>0.0</real>
+  		<key>ShadowColor</key><string>rgba(0,0,0,0)</string>
+  		<key>ShadowBlurRadius</key><real>0.0</real>
+  		<key>ShadowXoffset</key><real>0.0</real>
+  		<key>ShadowYoffset</key><real>1.0</real>
+  	</dict>
+  </dict>
+</plist>
