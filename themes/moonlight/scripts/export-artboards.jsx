@@ -6,7 +6,7 @@ function exportArtboards() {
 
         // Skip artboards that start with "Artboard" or that start with a dash (-)
         if (!(artboardName.match(/^artboard/) || artboardName.match(/^\-/))) {
-            var filename = "~/Desktop/theme-generator/themes/moonlight/src/icons/" + artboardName + ".png"
+            var filename = "/Users/tyler/Documents/ty-code/theme-generator/themes/moonlight/src/icons/" + artboardName + ".png"
             var destFile = new File(filename);
             var options = new ExportOptionsPNG24();
             options.artBoardClipping = true;

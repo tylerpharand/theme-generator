@@ -41,10 +41,10 @@ echo "Saved package to "./build/moonlight_v0.1.0""
 
 # Copy theme to device
 echo "Copying theme to device..."
-scp -rq $THEME_DIR root@10.0.0.5:/Library/Themes/
+scp -i ~/.ssh/id_rsa_iphone -rq $THEME_DIR root@tyleriphone.local:/Library/Themes/
 
 # Restart springboard
-echo "killall backboardd" | ssh root@10.0.0.5
+echo "killall backboardd" | ssh root@tyleriphone.local -i ~/.ssh/id_rsa_iphone
 
 # Tidy up
 rm -r $BUILD_DIR
